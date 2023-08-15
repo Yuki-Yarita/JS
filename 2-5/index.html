@@ -40,19 +40,26 @@
 
     <script>
         //①onchangeで使用されている関数の中身を実装してください。
+
+        //「選択してください」の際何も表示されないように処理
         document.getElementsByTagName('tr')[0].style.display = "none";
-        document.getElementsByTagName('tr')[1].style.display = "none";7
+        document.getElementsByTagName('tr')[1].style.display = "none";
 
         function changeLang() {
+          //言語を選択する際の値を取得
           const value = document.getElementsByTagName('select')[0].value;
 
+          //選択された言語に応じて表示される言語を変えるためにif文で処理
           if(value == "日本語") {
+            //日本語が選択されたときに、日本語を表示し英語は非表示にする
             document.getElementsByTagName('tr')[0].style.display = "block";
             document.getElementsByTagName('tr')[1].style.display = "none";    
           }else if(value == "English") {
+            //英語が選択されたときに、日本語を非表示にし、英語を表示する
             document.getElementsByTagName('tr')[0].style.display = "none";
             document.getElementsByTagName('tr')[1].style.display = "block";    
           }else {
+            //全て表示を押した際にどちらの言語も表示されるようにする
             document.getElementsByTagName('tr')[0].style.display = "block";    
             document.getElementsByTagName('tr')[1].style.display = "block";    
           }
