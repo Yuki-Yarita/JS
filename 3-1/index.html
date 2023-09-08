@@ -19,20 +19,9 @@
   <button class="click">クリック</button>
   <script>
 //  ここにjQueryを記入
-$(document).ready(function () {//HTMLの構造が読み込まれた後に処理される
-  let isOpen = false;//カーテンが開いているかを示す変数
-  const left = $(".left");//左カーテンの要素を取得
-  const right = $(".right");//右カーテンの要素を取得
-
-  $(".click").click(function () {
-    isOpen = !isOpen; // カーテンが開いているなら閉じ、閉じているなら開く
-    if (isOpen) {//カーテンを閉じるアニメーション
-      left.animate({ width: "0%" }, 2000);
-       right.animate({ width: "0%" }, 2000);
-    } else {//カーテンを開くアニメーション
-      left.animate({ width: "50%" }, 2000);
-      right.animate({ width: "50%" }, 2000);
-    }
+$(document).ready(function() {
+  $(".click").click(function() {
+    $(".left, .right").toggleClass("action");
   });
 });
   </script>
